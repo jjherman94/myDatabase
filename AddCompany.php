@@ -1,6 +1,3 @@
-<!-- Group 10
-     Joshua Herman
-     Douglas Steiert-->
 <?php
 
 $con = mysql_connect("localhost","root","");
@@ -18,7 +15,7 @@ mysql_select_db("Flixnet", $con);
 if ($_POST['Company']!=""){
 	$sql="INSERT INTO Company (CName, City, Country)
 	VALUES
-	('$_POST[CompName]','$_POST[CompCity]','$_POST[CompCountry]')";
+	('$_POST[Company]','$_POST[City]','$_POST[Country]')";
 	
 	if (!mysql_query($sql,$con))
 	  {

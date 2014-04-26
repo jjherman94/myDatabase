@@ -7,24 +7,21 @@ if (!$con)
   }
   
 
- 
+
 mysql_select_db("Flixnet", $con);
 
 
 
 if ($_POST['Title']!=""){
-	$sql="INSERT INTO Movie (MName, Genre, Rating, CityFilm, CountryFilm,
-	Weekday, MonthYear, YearMade, Synopsis)
-	VALUES
-	('$_POST[Title]','$_POST[Genre]','$_POST[Rating]','$_POST[CityFilmed]',
-	'&_POST[CountryFilmed]','&_POST[ReleaseDay]','&_POST[ReleaseMonth]',
-	'&_POST[ReleaseYear]','&_POST[Synopsis]')";
+	$sql="DELETE FROM Movie
+	Where
+	(MName = '$_POST[Title]')";
 	
 	if (!mysql_query($sql,$con))
 	  {
 	  die('Error: ' . mysql_error());
 	  }
-	echo $_POST['Title']." is added";
+	echo $_POST['Title']." has been deleted.";
 	}
 else echo "The provided information is not correct!";
 
