@@ -24,7 +24,7 @@ if ($_POST['Company']!=""){
 	  {
 	  die('Error: ' . mysql_error());
 	  }
-	echo $_POST['Company']." is added";
+	echo $_POST['CompName']." is added";
 	}
 else echo "The provided information is not correct!";
 
