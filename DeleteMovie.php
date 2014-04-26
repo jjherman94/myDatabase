@@ -12,16 +12,16 @@ mysql_select_db("Flixnet", $con);
 
 
 
-if ($_POST['Company']!=""){
-	$sql="INSERT INTO Company (CName, City, Country)
-	VALUES
-	('$_POST[Company]','$_POST[City]','$_POST[Country]')";
+if ($_POST['Title']!=""){
+	$sql="DELETE FROM Movie
+	Where
+	(MName = '$_POST[Title]')";
 	
 	if (!mysql_query($sql,$con))
 	  {
 	  die('Error: ' . mysql_error());
 	  }
-	echo $_POST['Company']." is added";
+	echo $_POST['Title']." has been deleted.";
 	}
 else echo "The provided information is not correct!";
 
