@@ -15,7 +15,7 @@ mysql_select_db("Flixnet", $con);
 if ($_POST['Company']!=""){
 	$sql="INSERT INTO Company (CName, City, Country)
 	VALUES
-	('$_POST[Company]','$_POST[City]','$_POST[Country]')";
+	('$_POST[CompName]','$_POST[CompCity]','$_POST[CompCountry]')";
 	
 	if (!mysql_query($sql,$con))
 	  {
