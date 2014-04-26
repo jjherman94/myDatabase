@@ -13,7 +13,7 @@ mysql_select_db("Flixnet", $con);
 
 
 if ($_POST['Name']!=""){
-	$sql="INSERT INTO Actor (AName, MoneyEarned)
+	$sql="INSERT INTO ActorActress (AName, MoneyEarned)
 	VALUES
 	('$_POST[Name]','$_POST[MoneyEarned]')";
 	
