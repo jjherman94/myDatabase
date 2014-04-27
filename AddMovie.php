@@ -20,10 +20,6 @@ if ($_POST['Title']!=""){
 	'&_POST[CountryFilmed]','&_POST[ReleaseDay]','&_POST[ReleaseMonth]',
 	'&_POST[ReleaseYear]','&_POST[Synopsis]')";
 	
-	&sql="INSERT INTO Genre (Genres)
-	VALUES
-	('&_POST[Genre]');"
-	
 	if (!mysql_query($sql,$con))
 	  {
 	  die('Error: ' . mysql_error());

@@ -12,16 +12,16 @@ mysql_select_db("Flixnet", $con);
 
 
 
-if ($_POST['Company']!=""){
-	$sql="INSERT INTO Company (CName, City, Country)
+if ($_POST['Genre']!="" && $_POST['MName']!=""){
+	$sql="INSERT INTO Genre (MName, Genres)
 	VALUES
-	('$_POST[Company]','$_POST[City]','$_POST[Country]')";
+	('$_POST[MName]','$_POST[Genres]')";
 	
 	if (!mysql_query($sql,$con))
 	  {
 	  die('Error: ' . mysql_error());
 	  }
-	echo $_POST['Company']." is added";
+	echo $_POST['Genre']." is added";
 	}
 else echo "The provided information is not correct!";
 
