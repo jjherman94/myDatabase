@@ -12,7 +12,7 @@ mysql_select_db("Flixnet", $con);
 
 
 
-if ($_POST['Genre']!="" && $_POST['MName']!=""){
+if ($_POST['Genre']!="" AND $_POST['MName']!=""){
 	$sql="INSERT INTO Genre (MName, Genres)
 	VALUES
 	('$_POST[MName]','$_POST[Genres]')";
