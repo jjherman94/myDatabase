@@ -13,12 +13,16 @@ mysql_select_db("Flixnet", $con);
 
 
 if ($_POST['Title']!=""){
-	$sql="INSERT INTO Movie (MName, Genre, Rating, CityFilm, CountryFilm,
+	$sql="INSERT INTO Movie (MName, Rating, CityFilm, CountryFilm,
 	Weekday, MonthYear, YearMade, Synopsis)
 	VALUES
-	('$_POST[Title]','$_POST[Genre]','$_POST[Rating]','$_POST[CityFilmed]',
+	('$_POST[Title]','$_POST[Rating]','$_POST[CityFilmed]',
 	'&_POST[CountryFilmed]','&_POST[ReleaseDay]','&_POST[ReleaseMonth]',
 	'&_POST[ReleaseYear]','&_POST[Synopsis]')";
+	
+	&sql="INSERT INTO Genre (Genres)
+	VALUES
+	('&_POST[Genre]');"
 	
 	if (!mysql_query($sql,$con))
 	  {
