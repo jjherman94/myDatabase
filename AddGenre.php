@@ -7,24 +7,21 @@ if (!$con)
   }
   
 
- 
+
 mysql_select_db("Flixnet", $con);
 
 
 
-if ($_POST['Title']!=""){
-	$sql="INSERT INTO Movie (MName, Rating, CityFilm, CountryFilm,
-	Weekday, MonthYear, YearMade, Synopsis)
+if ($_POST['Genre']!="" && $_POST['MName']!=""){
+	$sql="INSERT INTO Genre (MName, Genres)
 	VALUES
-	('$_POST[Title]','$_POST[Rating]','$_POST[CityFilmed]',
-	'&_POST[CountryFilmed]','&_POST[ReleaseDay]','&_POST[ReleaseMonth]',
-	'&_POST[ReleaseYear]','&_POST[Synopsis]')";
+	('$_POST[MName]','$_POST[Genres]')";
 	
 	if (!mysql_query($sql,$con))
 	  {
 	  die('Error: ' . mysql_error());
 	  }
-	echo $_POST['Title']." is added";
+	echo $_POST['Genre']." is added";
 	}
 else echo "The provided information is not correct!";
 
