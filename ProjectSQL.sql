@@ -45,6 +45,6 @@ Create Table Movie(
 
 Create Table Genre(
   MName varchar(30),
-  Genres varchar(15) Not Null,
+  Genres varchar(15) Not Null PRIMARY KEY,
   Foreign Key (MName) REFERENCES Movie(MName)
 );
