@@ -20,8 +20,8 @@ if ($_POST['Title']!=""){
 	Weekday, MonthYear, YearMade, Synopsis)
 	VALUES
 	('$_POST[Title]','$_POST[Rating]','$_POST[CityFilmed]',
-	'&_POST[CountryFilmed]','&_POST[ReleaseDay]','&_POST[ReleaseMonth]',
-	'&_POST[ReleaseYear]','&_POST[Synopsis]')";
+	'$_POST[CountryFilmed]','$_POST[ReleaseDay]','$_POST[ReleaseMonth]',
+	'$_POST[ReleaseYear]','$_POST[Synopsis]')";
 	
 	if (!mysql_query($sql,$con))
 	  {

@@ -17,7 +17,7 @@ mysql_select_db("Flixnet", $con);
         CountryFilm, CityFilm, Genre
         FROM Movie M
         WHERE (Movie.MName = '$_POST[Title]'" and
-        (Select Genre
+        (Select Genres
           FROM Genre G
           WHERE M.MName = G.MName);
     $result = mysql_query($query);
