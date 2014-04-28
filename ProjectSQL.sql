@@ -14,9 +14,9 @@ Create Table Technical(
 
 Create Table BoxOffice(
   Mname2 varchar(30) Not Null References Movie(MName),
-  DayofWeek varchar(10),
+  DayofWeek integer,
   MonthofYear varchar(10),
-  YearRelease integer(4) Not Null,
+  YearRelease integer Not Null,
   Budget varchar(15),
   GrossIncome varchar(20) Not Null,
   Primary Key(DayofWeek, MonthofYear, YearRelease)
@@ -36,9 +36,9 @@ Create Table Movie(
   MName varchar(30) Primary Key,
   Rating varchar(5) Not Null,
   Synopsis varchar(250),
-  Weekday varchar(10),
+  Weekday integer,
   MonthYear varchar(10),
-  YearMade integer(4) Not Null,
+  YearMade integer Not Null,
   CountryFilm varchar(20),
   CityFilm varchar(20)
 );
