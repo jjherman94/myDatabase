@@ -16,8 +16,8 @@ mysql_select_db("Flixnet", $con);
 	$query  = "SELECT MName, Rating, Synopsis, Weekday, MonthYear, YearMade,
         CountryFilm, CityFilm, Genre
         FROM Movie M
-        WHERE Movie.MName = '$_POST[Title]'" and
-          (Select Genre
+        WHERE (Movie.MName = '$_POST[Title]'" and
+        (Select Genre
           FROM Genre G
           WHERE M.MName = G.MName);
     $result = mysql_query($query);
