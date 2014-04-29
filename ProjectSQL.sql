@@ -1,47 +1,46 @@
 Create Table Company(
-  CName varchar(20) Primary Key REFERENCES Technical(Cname),
+  CName varchar(30) Primary Key REFERENCES Technical(Cname),
   City varchar(15),
   Country varchar(20)
 );
 
 Create Table Technical(
-  Cname varchar(20) Not Null References Company(CName),
-  Mname varchar(30) Not Null References Movie(MName),
-  Runtime varchar(10) Primary Key,
+  Cname varchar(30) Not Null References Company(CName),
+  Mname varchar(50) Not Null References Movie(MName),
+  Runtime varchar(10),
   Sound varchar(15),
-  Aspect varchar(10)
+  Aspect varchar(10),
+  Primary Key(Mname, Runtime)
 );
 
 Create Table BoxOffice(
-  Mname2 varchar(30) Not Null References Movie(MName),
+  Mname2 varchar(50) Not Null References Movie(MName),
   DayofWeek integer,
   MonthofYear varchar(10),
   YearRelease integer Not Null,
   Budget varchar(15),
   GrossIncome varchar(20) Not Null,
-  Primary Key(DayofWeek, MonthofYear, YearRelease)
+  Primary Key(Mname2, DayofWeek, MonthofYear, YearRelease)
 );
 
 Create Table ActorActress(
-  AName varchar(30) Primary Key,
+  AName varchar(50) Primary Key,
   NumberMovies int
 );
 
 Create Table MoviesIn(
-  AName varchar(30) References ActorActress(AName),
-  Movies varchar(30)
+  AName varchar(50) References ActorActress(AName),
+  Movies varchar(50)
 );
 
 Create Table Series(
-  MName varchar(30),
-  Prequel varchar(30),
-  Sequel varchar(30),
-  Primary Key(MName, Prequel, Sequel),
-  Foreign Key (MName) References Movie(MName)
+  MName varchar(50) References Movie(MName),
+  SeriesName varchar(30),
+  Primary Key(SeriesName, MName)
 );
 
 Create Table Movie(
-  MName varchar(30) Primary Key,
+  MName varchar(50) Primary Key,
   Rating varchar(5) Not Null,
   Synopsis varchar(250),
   Weekday integer,
@@ -52,7 +51,7 @@ Create Table Movie(
 );
 
 Create Table Genre(
-  MName varchar(30),
+  MName varchar(50),
   Genres varchar(15) ,
   Primary Key(MName, Genres),
   Foreign Key (MName) REFERENCES Movie(MName)
