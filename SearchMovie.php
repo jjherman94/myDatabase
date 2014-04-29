@@ -13,10 +13,10 @@ if (!$con)
 
 mysql_select_db("Flixnet", $con);
 
-	$query  = "SELECT MName, Rating, Synopsis, Weekday, MonthYear, YearMade,
+	$query  = "SELECT M.MName, Rating, Synopsis, Weekday, MonthYear, YearMade,
         CountryFilm, CityFilm, Genres
         FROM Movie M, Genre G
-        WHERE (Movie.MName = '$_POST[Title]' and M.MName=G.MName";
+        WHERE M.MName = '$_POST[Title]' and M.MName=G.MName";
     $result = mysql_query($query);
 	if (!mysql_query($query,$con))
 	  {
@@ -48,7 +48,7 @@ mysql_select_db("Flixnet", $con);
          	echo "<td>$row[YearMade]</td>";
                 echo "<td>$row[CountryFilm]</td>";
                 echo "<td>$row[CityFilm]</td>";
-                echo "<td>$row[Genre]</td>";
+                echo "<td>$row[Genres]</td>";
 		echo "</tr>";
 	}
 		echo "</table>";
