@@ -14,11 +14,19 @@ if (!$con)
 mysql_select_db("Flixnet", $con);
 
 	$query  = "SELECT M.MName, Rating, Synopsis, Weekday, MonthYear, YearMade,
-        CountryFilm, CityFilm, Genres
-        FROM Movie M, Genre G
-        WHERE M.MName = '$_POST[Title]' and M.MName=G.MName";
+        CountryFilm, CityFilm
+        FROM Movie M
+        WHERE M.MName = '$_POST[Title]'";
+        $query2 = "SELECT Genres
+        FROM Genre
+        WHERE MName = '$_POST[Title]'";
     $result = mysql_query($query);
 	if (!mysql_query($query,$con))
+	  {
+	  die('Error: ' . mysql_error());
+      }
+    $result2 = mysql_query($query2);
+        if (!mysql_query($query2,$con))
 	  {
 	  die('Error: ' . mysql_error());
       }
@@ -50,9 +58,18 @@ mysql_select_db("Flixnet", $con);
                 echo "<td>$row[CityFilm]</td>";
                 echo "<td>$row[Genres]</td>";
 		echo "</tr>";
-	}
+      }
+                if (!$result2) {
+    die('Invalid query: ' . mysql_error());
+    }
+        echo "<table>";
+        echo "<tr>";
+        echo "<td> Genre</td>";
+        while ($row = mysql_fetch_array($result2)) {
+                echo "<tr>";
+                echo "<td>$row[Genres]</td>";
 		echo "</table>";
-	 
+      } 
 
 mysql_close($con)
 
