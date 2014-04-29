@@ -16,9 +16,9 @@ mysql_select_db("Flixnet", $con);
 
 
 if ($_POST['Title']!=""){
-	$sql="INSERT INTO Series (MName, Prequel, Sequel)
+	$sql="INSERT INTO Series (MName, SeriesName)
 	VALUES
-	('$_POST[MName]','$_POST[Prequel]', '$_POST[Sequel]')";
+	('$_POST[Movie]','$_POST[SeriesName]')";
 	
 	if (!mysql_query($sql,$con))
 	  {
