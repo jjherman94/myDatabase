@@ -16,6 +16,9 @@ mysql_select_db("Flixnet", $con);
 
 
 if ($_POST['Title']!=""){
+	$sql="DELETE FROM Genre
+	WHERE (MName = '$_POST[Title]')";
+	
 	$sql="DELETE FROM Movie
 	WHERE (MName = '$_POST[Title]')";
 	
