@@ -32,6 +32,14 @@ Create Table MoviesIn(
   Movies varchar(30)
 );
 
+Create Table Series(
+  MName varchar(30),
+  Prequel varchar(30),
+  Sequel varchar(30),
+  Primary Key(MName, Prequel, Sequel),
+  Foreign Key (MName) References Movie(MName)
+);
+
 Create Table Movie(
   MName varchar(30) Primary Key,
   Rating varchar(5) Not Null,
@@ -45,6 +53,7 @@ Create Table Movie(
 
 Create Table Genre(
   MName varchar(30),
-  Genres varchar(15) Not Null PRIMARY KEY,
+  Genres varchar(15) ,
+  Primary Key(MName, Genres),
   Foreign Key (MName) REFERENCES Movie(MName)
 );
