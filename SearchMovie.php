@@ -13,7 +13,7 @@ if (!$con)
 
 mysql_select_db("Flixnet", $con);
 
-	$query  = "SELECT M.MName, Rating, Synopsis, Weekday, MonthYear, YearMade,
+	$query  = "SELECT M.MName, Rating, Weekday, MonthYear, YearMade,
         CountryFilm, CityFilm
         FROM Movie M
         WHERE M.MName = '$_POST[Title]'";
@@ -38,7 +38,6 @@ mysql_select_db("Flixnet", $con);
 	echo "<tr>";
 	echo "<td>Title</td>";
 	echo "<td>Rating</td>";
-	echo "<td>Synopsis</td>";
 	echo "<td>Release Day</td>";
         echo "<td>Release Month</td>";
         echo "<td>Release Year</td>";
@@ -50,26 +49,20 @@ mysql_select_db("Flixnet", $con);
 		echo "<tr>";
 		echo "<td>$row[MName]</td>";
 		echo "<td>$row[Rating]</td>";
-		echo "<td>$row[Synopsis]</td>";
 		echo "<td>$row[Weekday]</td>";
                 echo "<td>$row[MonthYear]</td>";
          	echo "<td>$row[YearMade]</td>";
                 echo "<td>$row[CountryFilm]</td>";
                 echo "<td>$row[CityFilm]</td>";
-                echo "<td>$row[Genres]</td>";
-		echo "</tr>";
-      }
-                if (!$result2) {
+                                if (!$result2) {
     die('Invalid query: ' . mysql_error());
     }
-        echo "<table>";
-        echo "<tr>";
-        echo "<td> Genre</td>";
         while ($row = mysql_fetch_array($result2)) {
-                echo "<tr>";
                 echo "<td>$row[Genres]</td>";
-		echo "</table>";
       } 
+		echo "</tr>";
+      }
+
 
 mysql_close($con)
 
