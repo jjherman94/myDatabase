@@ -15,10 +15,10 @@ mysql_select_db("Flixnet", $con);
 
 
 
-if ($_POST['Movie']!=""){
-	$sql="INSERT INTO Technical (Mname, Runtime, Sound, Aspect)
+if ($_POST['Movie']!="" and $_POST['Company']!=""){
+	$sql="INSERT INTO Technical (Cname, Mname, Runtime, Sound, Aspect)
 	VALUES
-	('$_POST[Movie]','$_POST[Runtime]','$_POST[Sound]','$_POST[Aspect]')";
+	('$_POST[Company]','$_POST[Movie]','$_POST[Runtime]','$_POST[Sound]','$_POST[Aspect]')";
 	
 	if (!mysql_query($sql,$con))
 	  {
