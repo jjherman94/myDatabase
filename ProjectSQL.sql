@@ -42,7 +42,6 @@ Create Table Series(
 Create Table Movie(
   MName varchar(50) Primary Key,
   Rating varchar(5) Not Null,
-  Synopsis varchar(250),
   Weekday integer,
   MonthYear varchar(10),
   YearMade integer Not Null,
