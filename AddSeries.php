@@ -15,7 +15,7 @@ mysql_select_db("Flixnet", $con);
 
 
 
-if ($_POST['Title']!=""){
+if ($_POST['Movie']!="" AND $_POST['SeriesName']!=""){
 	$sql="INSERT INTO Series (MName, SeriesName)
 	VALUES
 	('$_POST[Movie]','$_POST[SeriesName]')";
@@ -24,7 +24,7 @@ if ($_POST['Title']!=""){
 	  {
 	  die('Error: ' . mysql_error());
 	  }
-	echo $_POST['Title']." is added";
+	echo $_POST['Movie']." is added";
 	}
 else echo "The provided information is not correct!";
 

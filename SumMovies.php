@@ -13,7 +13,7 @@ mysql_select_db("Flixnet", $con);
 
 
 
-	$query  = "SELECT Sum(MName) AS TotalMovies
+	$query  = "SELECT COUNT(*) AS TotalMovies
 FROM Movie";
     $result = mysql_query($query);
     $row    = mysql_fetch_assoc($result);
@@ -30,11 +30,9 @@ FROM Movie";
 	echo "<tr>";
 	echo "<td>Total Movies</td>";
 	echo "</tr>";
-	while ($row = mysql_fetch_array($result))  {
 		echo "<tr>";
 		echo "<td>$row[TotalMovies]</td>";
 		echo "</tr>";
-	}
 		echo "</table>";
 
 mysql_close($con)
