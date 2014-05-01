@@ -27,30 +27,27 @@ ORDER BY NumberMovies DESC";
 	  	if (!$result) { 
     die('Invalid query: ' . mysql_error());
     }
-    
-	echo "<table>";
+        echo "<table border ='1'>";
 	echo "<tr>";
-	echo "<td>Actor/Actress</td>";
+	echo "<th>Actor/Actress</th>";
         echo "&nbsp";
-        echo "<td>Number of Movies Starred in</td>";
+        echo "<th>Number of Movies Starred in</th>";
 	echo "</tr>";
         
 	echo "<tr>";
-  	echo "<td>$row[AName]</td>";
-        echo "<td>$row[NumberMovies]</td>";
+  	echo "<th>$row[AName]</th>";
+        echo "<th>$row[NumberMovies]</th>";
 	echo "</tr>";
-	echo "</table>";
               while ($row = mysql_fetch_array($result))  {
                 echo "&nbsp";
 		echo "<tr>";
-		echo "<td>$row[AName]</td>";
+		echo "<th>$row[AName]</th>";
                 echo "&nbsp";
-                echo "<td>$row[NumberMovies]</td>";
+                echo "<th>$row[NumberMovies]</th>";
 		echo "</tr>";
-		echo "</table>";
-                echo "<br>";
-    }
 
+    }
+ echo "</table>";
 mysql_close($con)
 
 ?>
