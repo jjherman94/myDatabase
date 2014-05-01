@@ -22,16 +22,15 @@ WHERE AName='$_POST[name]'";
 	  die('Error: ' . mysql_error());
       }
 
-    echo "<table>";
-	echo "<tr>Actor/Actress</tr>";
+        echo "<table border = '1'>";
 	echo "<tr>";
-	echo "<td>Name</td>";
-        echo "<td>Number of Movies Starred In:</td>";
+	echo "<th>Actor/Actress</th>";
+        echo "<th>Number of Movies Starred In:</th>";
 	echo "</tr>";
 	while ($row = mysql_fetch_array($result1))  {
 		echo "<tr>";
-		echo "<td>$row[AName]</td>";
-                echo "<td>$row[NumberMovies]</td>";
+		echo "<th>$row[AName]</th>";
+                echo "<th>$row[NumberMovies]</th>";
 		echo "</tr>";
 	}
 		echo "</table>";

@@ -26,23 +26,23 @@ mysql_select_db("Flixnet", $con);
 	  	if (!$result) { 
     die('Invalid query: ' . mysql_error());
     }
-	echo "<table>";
+	echo "<table border = '1'>";
 	echo "<tr>";
-	echo "<td>Title</td>";
-	echo "<td>Production Company</td>";
-	echo "<td>Runtime</td>";
-        echo "<td>Sound</td>";
-        echo "<td>Aspect</td>";
+	echo "<th>Title</th>";
+	echo "<th>Production Company</th>";
+	echo "<th>Runtime</th>";
+        echo "<th>Sound</th>";
+        echo "<th>Aspect</th>";
 	echo "</tr>";
 	while ($row = mysql_fetch_array($result))  {
 		echo "<tr>";
-		echo "<td>$row[Mname]</td>";
-		echo "<td>$row[Cname]</td>";
-		echo "<td>$row[Runtime]</td>";
-                echo "<td>$row[Sound]</td>";
-         	echo "<td>$row[Aspect]</td>";
+		echo "<th>$row[Mname]</th>";
+		echo "<th>$row[Cname]</th>";
+		echo "<th>$row[Runtime]</th>";
+                echo "<th>$row[Sound]</th>";
+         	echo "<th>$row[Aspect]</th>";
     }
-
+echo "</table>";
 
 mysql_close($con)
 

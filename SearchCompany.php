@@ -22,18 +22,16 @@ WHERE CName='$_POST[name]'";
 	  die('Error: ' . mysql_error());
       }
 
-    echo "<table>";
-	echo "<tr>Company</tr>";
-	echo "<tr>";
-	echo "<td>Name</td>";
-        echo "<td>City Origin:</td>";
-        echo "<td>Country Origin</td>";
+    echo "<table border = '1'>";
+	echo "<th>Company</th>";
+        echo "<th>City Origin:</th>";
+        echo "<th>Country Origin</th>";
 	echo "</tr>";
 	while ($row = mysql_fetch_array($result1))  {
 		echo "<tr>";
-		echo "<td>$row[CName]</td>";
-                echo "<td>$row[City]</td>";
-                echo "<td>$row[Country]</td>";
+		echo "<th>$row[CName]</th>";
+                echo "<th>$row[City]</th>";
+                echo "<th>$row[Country]</th>";
 		echo "</tr>";
 	}
 		echo "</table>";

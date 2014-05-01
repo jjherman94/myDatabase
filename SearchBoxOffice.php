@@ -27,25 +27,25 @@ mysql_select_db("Flixnet", $con);
 	  	if (!$result) { 
     die('Invalid query: ' . mysql_error());
     }
-	echo "<table>";
+	echo "<table border = '1'>";
 	echo "<tr>";
-	echo "<td>Title</td>";
-	echo "<td>Release Day</td>";
-	echo "<td>Release Month</td>";
-        echo "<td>Release Year</td>";
-        echo "<td>Budget</td>";
-        echo "<td>Gross Income</td>";
+	echo "<th>Title</th>";
+	echo "<th>Release Day</th>";
+	echo "<th>Release Month</th>";
+        echo "<th>Release Year</th>";
+        echo "<th>Budget</th>";
+        echo "<th>Gross Income</th>";
 	echo "</tr>";
 	while ($row = mysql_fetch_array($result))  {
 		echo "<tr>";
-		echo "<td>$row[Mname2]</td>";
-		echo "<td>$row[DayofWeek]</td>";
-		echo "<td>$row[MonthofYear]</td>";
-                echo "<td>$row[YearRelease]</td>";
-         	echo "<td>$row[Budget]</td>";
-                echo "<td>$row[GrossIncome]</td>";
+		echo "<th>$row[Mname2]</th>";
+		echo "<th>$row[DayofWeek]</th>";
+		echo "<th>$row[MonthofYear]</th>";
+                echo "<th>$row[YearRelease]</th>";
+         	echo "<th>$row[Budget]</th>";
+                echo "<th>$row[GrossIncome]</th>";
     }
-
+echo "</table>";
 
 mysql_close($con)
 

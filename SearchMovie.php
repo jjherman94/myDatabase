@@ -34,35 +34,35 @@ mysql_select_db("Flixnet", $con);
 	  	if (!$result) { 
     die('Invalid query: ' . mysql_error());
     }
-	echo "<table>";
+	echo "<table border = '1'>";
 	echo "<tr>";
-	echo "<td>Title</td>";
-	echo "<td>Rating</td>";
-	echo "<td>Release Day</td>";
-        echo "<td>Release Month</td>";
-        echo "<td>Release Year</td>";
-        echo "<td>Country Filmed In</td>";
-        echo "<td>City Filmed In</td>";
-        echo "<td>Genre</td>";
+	echo "<th>Title</th>";
+	echo "<th>Rating</th>";
+	echo "<th>Release Day</th>";
+        echo "<th>Release Month</th>";
+        echo "<th>Release Year</th>";
+        echo "<th>Country Filmed In</th>";
+        echo "<th>City Filmed In</th>";
+        echo "<th>Genre</td>";
 	echo "</tr>";
 	while ($row = mysql_fetch_array($result))  {
 		echo "<tr>";
-		echo "<td>$row[MName]</td>";
-		echo "<td>$row[Rating]</td>";
-		echo "<td>$row[Weekday]</td>";
-                echo "<td>$row[MonthYear]</td>";
-         	echo "<td>$row[YearMade]</td>";
-                echo "<td>$row[CountryFilm]</td>";
-                echo "<td>$row[CityFilm]</td>";
+		echo "<th>$row[MName]</th>";
+		echo "<th>$row[Rating]</th>";
+		echo "<th>$row[Weekday]</th>";
+                echo "<th>$row[MonthYear]</th>";
+         	echo "<th>$row[YearMade]</th>";
+                echo "<th>$row[CountryFilm]</th>";
+                echo "<th>$row[CityFilm]</th>";
                                 if (!$result2) {
     die('Invalid query: ' . mysql_error());
     }
         while ($row = mysql_fetch_array($result2)) {
-                echo "<td>$row[Genres]</td>";
+                echo "<th>$row[Genres]</th>";
       } 
 		echo "</tr>";
       }
-
+echo "</table>";
 
 mysql_close($con)
 

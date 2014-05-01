@@ -26,12 +26,12 @@ FROM Movie";
 	  	if (!$result) { 
     die('Invalid query: ' . mysql_error());
     }
-	echo "<table>";
+	echo "<table border = '1'>";
 	echo "<tr>";
-	echo "<td>Total Movies</td>";
+	echo "<th>Total Movies</th>";
 	echo "</tr>";
 		echo "<tr>";
-		echo "<td>$row[TotalMovies]</td>";
+		echo "<th>$row[TotalMovies]</th>";
 		echo "</tr>";
 		echo "</table>";
 
