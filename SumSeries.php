@@ -15,7 +15,7 @@ mysql_select_db("Flixnet", $con);
 
 	$query  = "SELECT COUNT(*) AS TotalMovies
 FROM Series
-WHERE SeriesName = '$_POST[Title]'
+WHERE SeriesName = '$_POST[seriesName]'
 GROUP BY SeriesName";
     $result = mysql_query($query);
     $row    = mysql_fetch_assoc($result);
@@ -42,7 +42,7 @@ mysql_close($con)
 ?>
 <html>
   
-<br />
+<br/>
 <a href="Home.html">Back</a>
 
 </html>
