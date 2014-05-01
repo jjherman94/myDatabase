@@ -14,7 +14,7 @@ if (!$con)
 mysql_select_db("Flixnet", $con);
 
 	$query  = "SELECT Mname2, DayofWeek, MonthofYear, YearRelease, Budget,
-        Gross Income
+        GrossIncome
         FROM BoxOffice
         WHERE Mname2 = '$_POST[Title]'";
 
@@ -38,7 +38,7 @@ mysql_select_db("Flixnet", $con);
 	echo "</tr>";
 	while ($row = mysql_fetch_array($result))  {
 		echo "<tr>";
-		echo "<td>$row[MName2]</td>";
+		echo "<td>$row[Mname2]</td>";
 		echo "<td>$row[DayofWeek]</td>";
 		echo "<td>$row[MonthofYear]</td>";
                 echo "<td>$row[YearRelease]</td>";

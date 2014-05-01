@@ -1,6 +1,3 @@
-<!-- Group 10
-     Joshua Herman
-     Douglas Steiert-->
 <?php
 
 $con = mysql_connect("localhost","root","");
