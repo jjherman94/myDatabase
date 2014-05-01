@@ -41,3 +41,8 @@ mysql_close($con)
 
 ?>
 <html>
+  
+<br />
+<a href="Home.html">Back</a>
+
+</html>
