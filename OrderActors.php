@@ -30,7 +30,6 @@ ORDER BY NumberMovies DESC";
         echo "<table border ='1'>";
 	echo "<tr>";
 	echo "<th>Actor/Actress</th>";
-        echo "&nbsp";
         echo "<th>Number of Movies Starred in</th>";
 	echo "</tr>";
         
@@ -39,10 +38,8 @@ ORDER BY NumberMovies DESC";
         echo "<th>$row[NumberMovies]</th>";
 	echo "</tr>";
               while ($row = mysql_fetch_array($result))  {
-                echo "&nbsp";
 		echo "<tr>";
 		echo "<th>$row[AName]</th>";
-                echo "&nbsp";
                 echo "<th>$row[NumberMovies]</th>";
 		echo "</tr>";
 
