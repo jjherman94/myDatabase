@@ -16,16 +16,15 @@ mysql_select_db("Flixnet", $con);
 
 
 if($_POST['Title'] != "" AND $_POST['NewIncome'] != ""){
-	$query  = "UPDATE Movie
+	$query  = "UPDATE BoxOffice
 SET GrossIncome = '$_POST[NewIncome]'
-WHERE MName = '$_POST[Title]'";
-    $result = mysql_query($query);
-    $row    = mysql_fetch_assoc($result);
+WHERE Mname2 = '$_POST[Title]'";
 	
 	if (!mysql_query($query,$con))
 	  {
 	  die('Error: ' . mysql_error());
 	  }
+          
 	echo $_POST['Title']." is updated";
 	}
 else echo "The provided information is not correct!";

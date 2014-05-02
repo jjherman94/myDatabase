@@ -16,10 +16,10 @@ mysql_select_db("Flixnet", $con);
 
 
 
-	$query  = "Country, Count(MName) AS TotalMovies
+	$query  = "SELECT CountryFilm, Count(MName) AS TotalMovies
 FROM Movie
-GROUP BY Country
-ORDER BY Count(MName) DESC";
+GROUP BY CountryFilm
+ORDER BY TotalMovies DESC";
     $result = mysql_query($query);
     $row    = mysql_fetch_assoc($result);
 	
@@ -38,12 +38,12 @@ ORDER BY Count(MName) DESC";
 	echo "</tr>";
         
 	echo "<tr>";
-  	echo "<th>$row[Country]</th>";
-        echo "<th>$row[NumberMovies]</th>";
+  	echo "<th>$row[CountryFilm]</th>";
+        echo "<th>$row[TotalMovies]</th>";
 	echo "</tr>";
               while ($row = mysql_fetch_array($result))  {
 		echo "<tr>";
-		echo "<th>$row[AName]</th>";
+		echo "<th>$row[CountryFilm]</th>";
                 echo "<th>$row[TotalMovies]</th>";
 		echo "</tr>";
 
