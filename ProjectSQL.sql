@@ -28,11 +28,6 @@ Create Table ActorActress(
   NumberMovies int
 );
 
-Create Table MoviesIn(
-  AName varchar(50) References ActorActress(AName),
-  Movies varchar(50)
-);
-
 Create Table Series(
   MName varchar(50) References Movie(MName),
   SeriesName varchar(30),
